@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://booking.recranet.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://booking.recranet.com; connect-src 'self' https://booking.recranet.com https://api.recranet.com; frame-src 'self' https://www.google.com https://booking.recranet.com;">
+    
+    <link rel="canonical" href="https://www.chaletbuenavista.be/">
+    <link rel="preload" as="image" href="terras.jpg">
+    
+    <title>Chalet Buena Vista | Premium Ardennes Retreat</title>
+    <meta name="description" content="Experience unmatched panoramic views from your private, luxurious 4-person chalet in the heart of the Ardennes. Book your stay at Chalet Buena Vista today.">
+    <meta property="og:title" content="Chalet Buena Vista | Premium Ardennes Retreat">
+    <meta property="og:description" content="Private, luxurious 4-person chalet with stunning views in Bouillon, Belgium.">
+    <meta property="og:image" content="terras.jpg">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌲</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #D4AF37; 
+            --bg-light: #F9F8F6;
+            --text-dark: #222222;
+            --text-light: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); background-color: var(--bg-light); line-height: 1.7; overflow-x: hidden; }
+        h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-light); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); }
+
+        header { position: fixed; top: 0; left: 0; width: 100%; padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: var(--transition); background: transparent; }
+        header.scrolled { background: rgba(255, 255, 255, 0.98); padding: 15px 5%; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .logo { font-size: 28px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 3px; text-decoration: none; transition: var(--transition); }
+        header.scrolled .logo { color: var(--primary); }
+        .nav-right { display: flex; align-items: center; gap: 30px; }
+
+        .lang-switcher { display: flex; gap: 10px; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 30px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); transition: var(--transition); }
+        header.scrolled .lang-switcher { background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); }
+        .lang-btn { background: none; border: none; color: var(--text-light); font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; opacity: 0.6; transition: var(--transition); padding: 5px; }
+        header.scrolled .lang-btn { color: var(--primary); }
+        .lang-btn.active { opacity: 1; color: var(--accent); }
+
+        .lang-btn:focus-visible, .btn-reserve:focus-visible, .faq-question:focus-visible, .footer-links a:focus-visible, .contact-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+        .btn-reserve { background: var(--accent); color: var(--primary); padding: 12px 30px; border-radius: 30px; text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: var(--transition); border: 1px solid var(--accent); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
+        
+        .mobile-sticky-bar { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: var(--primary); padding: 15px 20px; z-index: 1001; box-shadow: 0 -5px 20px rgba(0,0,0,0.15); text-align: center; border-top: 2px solid var(--accent); }
+        .mobile-sticky-bar .btn-reserve { display: block; width: 100%; padding: 15px; font-size: 1.1rem; }
+
+        .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--text-light); background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%), url('terras.jpg') center/cover no-repeat; }
+        .hero-content { max-width: 900px; padding: 0 20px; z-index: 1; margin-top: -50px; }
+        .hero h1 { font-size: 5.5rem; line-height: 1.1; margin-bottom: 25px; text-shadow: 0 10px 30px rgba(0,0,0,0.4); font-style: italic; letter-spacing: 1px; }
+        .hero p { font-size: 1.2rem; font-weight: 400; letter-spacing: 1px; margin-bottom: 40px; text-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+        
+        .stats-bar { background: var(--primary); color: var(--text-light); padding: 25px 5%; display: flex; justify-content: center; position: relative; z-index: 10; border-top: 3px solid var(--accent); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .quick-stats { display: flex; justify-content: space-around; align-items: center; width: 100%; max-width: 1200px; flex-wrap: wrap; gap: 20px; }
+        .stat-item { display: flex; align-items: center; gap: 12px; font-weight: 500; font-size: 1.1rem; letter-spacing: 1px; }
+        .stat-item i { color: var(--accent); font-size: 1.3rem; }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .intro { padding: 120px 5%; display: flex; align-items: center; gap: 60px; max-width: 1400px; margin: auto; }
+        .intro-text { flex: 1; }
+        .intro-text h2 { font-size: 3.5rem; color: var(--primary); margin-bottom: 20px; line-height: 1.2; }
+        .intro-text .accent-line { width: 80px; height: 2px; background: var(--accent); margin-bottom: 30px; }
+        .intro-text p { font-size: 1.1rem; color: #555; margin-bottom: 20px; }
+        .intro-img { flex: 1; position: relative; }
+        .intro-img img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .intro-badge { position: absolute; bottom: -30px; left: -30px; background: var(--accent); color: var(--primary); padding: 30px; border-radius: 50%; width: 140px; height: 140px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 14px; font-weight: 700; text-transform: uppercase; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+
+        .amenities { background: var(--primary); color: white; padding: 120px 5%; }
+        .amenities-header { text-align: center; margin-bottom: 50px; }
+        .amenities-header h2 { font-size: 3.5rem; margin-bottom: 15px; }
+        .park-included-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(212, 175, 55, 0.15); border: 1px solid var(--accent); color: var(--accent); padding: 12px 24px; border-radius: 30px; font-size: 1rem; font-weight: 600; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; }
+        .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 40px 30px; border-radius: 15px; text-align: center; transition: var(--transition); }
+        .card-icon { font-size: 35px; margin-bottom: 20px; color: var(--accent); }
+        .card h3 { font-size: 1.5rem; color: #ffffff; margin-bottom: 15px; }
+        .card p { font-size: 0.95rem; color: #aaa; }
+
+        .park-facilities { background: var(--bg-light); padding: 80px 5% 120px; }
+        .park-facilities .card { background: white; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .park-facilities .card h3 { color: var(--primary); }
+        .park-facilities .card p { color: #666; }
+        .park-facilities-header { text-align: center; margin-bottom: 50px; }
+        .park-facilities-header h2 { font-size: 3rem; color: var(--primary); margin-bottom: 10px; }
+        .park-facilities-header p { color: #666; font-size: 1.1rem; }
+
+        .gallery { padding: 120px 0; background: var(--primary); text-align: center; overflow: hidden; color: white; border-top: 1px solid rgba(255,255,255,0.1); }
+        .gallery-header h2 { font-size: 3.5rem; color: white; margin-bottom: 15px; }
+        .gallery-header p { margin-bottom: 60px; color: #ccc; font-size: 1.1rem; }
+        .slider-wrap { position: relative; max-width: 1200px; margin: auto; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.4); outline: none; }
+        .slides { display: flex; transition: transform 0.8s cubic-bezier(0.8, 0, 0.2, 1); }
+        .slide { min-width: 100%; position: relative; overflow: hidden; }
+        .slide img { width: 100%; height: 700px; max-height: 80vh; object-fit: cover; display: block; transition: transform 6s ease; pointer-events: none; }
+        .slide.active-slide img { transform: scale(1.05); } 
+        .slide-caption { position: absolute; bottom: 40px; left: 40px; background: rgba(26, 26, 26, 0.9); padding: 15px 30px; border-radius: 10px; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--accent); box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 1px solid rgba(212, 175, 55, 0.3); pointer-events: none; }
+        .slider-nav { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); padding: 0 20px; pointer-events: none; }
+        .slider-btn { pointer-events: all; background: rgba(255,255,255,0.9); border: none; width: 60px; height: 60px; border-radius: 50%; font-size: 20px; color: var(--primary); cursor: pointer; transition: var(--transition); backdrop-filter: blur(5px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; }
+        
+        .explore { padding: 120px 5%; background: var(--bg-light); text-align: center; }
+        .explore-header h2 { font-size: 3.5rem; color: var(--primary); margin-bottom: 15px; }
+        .explore-header p { margin-bottom: 60px; color: #666; font-size: 1.1rem; }
+        .explore-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; }
+        .explore-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; transition: var(--transition); display: flex; flex-direction: column; border: 1px solid #eee; }
+        .explore-card img { width: 100%; height: 250px; object-fit: cover; }
+        .explore-body { padding: 30px; display: flex; flex-direction: column; flex-grow: 1; }
+        .explore-body h3 { color: var(--primary); font-size: 1.8rem; margin-bottom: 10px; }
+        .explore-body p { color: #555; font-size: 1rem; flex-grow: 1; }
+        .explore-attribution { font-size: 0.75rem; color: #888; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px; word-break: break-word; }
+        .explore-attribution a { color: var(--accent); text-decoration: none; font-weight: 500; display: inline-block; padding: 2px 0; }
+        .explore-attribution a:hover { text-decoration: underline; }
+
+        .faq-section { padding: 100px 5%; background: #ffffff; max-width: 900px; margin: auto; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-bottom: 100px; }
+        .faq-section h2 { text-align: center; font-size: 3.5rem; color: var(--primary); margin-bottom: 50px; }
+        .faq-item { border-bottom: 1px solid #eee; margin-bottom: 15px; }
+        .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 20px 0; font-size: 1.2rem; font-weight: 600; color: var(--primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Montserrat', sans-serif; }
+        .faq-question i { color: var(--accent); transition: transform 0.3s ease; }
+        .faq-question.active i { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: #555; padding-right: 40px; }
+        .faq-answer-inner { padding-bottom: 20px; line-height: 1.8; }
+
+        .contact-section { padding: 100px 5%; background: var(--primary); color: white; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+        .contact-wrapper { display: flex; flex-wrap: wrap; gap: 40px; max-width: 1400px; margin: auto; width: 100%; }
+        .map-container { flex: 1; min-width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+        .contact-info { flex: 1; min-width: 300px; padding: 40px; }
+        .contact-info h2 { font-size: 3rem; color: white; margin-bottom: 20px; }
+        .contact-info p { margin-bottom: 30px; font-size: 1.1rem; color: #bbb; }
+        .contact-buttons { display: flex; flex-direction: column; gap: 15px; }
+        .contact-link { display: inline-flex; align-items: center; gap: 15px; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: var(--transition); background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); }
+        .contact-link i { font-size: 1.5rem; }
+
+        .booking { padding: 150px 5%; background: url('leefruumte3.jpg') center/cover fixed; position: relative; }
+        .booking::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26, 26, 26, 0.85); z-index: 0; }
+        /* UI FIX: Added z-index to ensure container stays above overlay */
+        .booking-container { position: relative; z-index: 2; max-width: 900px; margin: auto; background: var(--bg-light); padding: 80px 60px; border-radius: 20px; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
+        .booking-container h2 { font-size: 3.5rem; color: var(--primary); margin-bottom: 20px; }
+        .recranet-placeholder { margin-top: 40px; padding: 60px; border: 2px dashed #ccc; border-radius: 15px; background: #fff; color: #888; font-size: 1.1rem; }
+        .booking-terms-note { margin-top: 20px; font-size: 0.85rem; color: #aaa; text-align: center; }
+
+        footer { background: #111; color: white; text-align: center; padding: 50px 20px 80px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-links { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--accent); }
+
+        /* UX FIX: Isolate hover states so mobile screens don't get 'sticky' cards */
+        @media (hover: hover) {
+            .lang-btn:hover { opacity: 1; color: var(--accent); }
+            .btn-reserve:hover { background: #b5952f; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); }
+            .card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.08); border-color: var(--accent); }
+            .park-facilities .card:hover { background: white; border-color: var(--accent); }
+            .explore-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); border-color: var(--accent); }
+            .slider-btn:hover { background: white; color: var(--accent); transform: scale(1.1); outline: none; }
+            .contact-link:hover { background: var(--accent); color: var(--primary); border-color: var(--accent); }
+        }
+
+        @media (max-width: 992px) { 
+            .intro, .contact-wrapper { flex-direction: column; text-align: center; } 
+            .intro-text .accent-line { margin: 0 auto 30px; } 
+            .intro-badge { display: none; } 
+            .hero h1 { font-size: 4rem; } 
+            .slide img { height: 350px; } 
+            .faq-section { margin-bottom: 60px; }
+        }
+        @media (max-width: 768px) {
+            body { padding-bottom: 90px; } /* Ensures bottom content isn't hidden by sticky bar */
+            header { padding: 15px 5%; flex-direction: row; flex-wrap: wrap; justify-content: space-between; background: rgba(0,0,0,0.9); }
+            header .btn-reserve { display: none; } 
+            .nav-right { width: 100%; justify-content: center; margin-top: 10px; }
+            .mobile-sticky-bar { display: block; }
+            .hero h1 { font-size: 3rem; } .booking-container { padding: 40px 20px; }
+            header.scrolled { background: rgba(0,0,0,0.95); }
+            header.scrolled .logo, header.scrolled .lang-btn { color: var(--text-light); }
+            .quick-stats { gap: 15px; }
+            .stat-item { width: 100%; justify-content: center; } 
+        }
+    </style>
+</head>
+<body id="top">
+    <noscript>
+        <div style="background-color: #ffcccc; color: #333; text-align: center; padding: 15px; font-family: sans-serif; position: relative; z-index: 9999;">
+            <strong>Note:</strong> Please enable JavaScript in your browser to use the language switcher and booking calendar correctly.
+        </div>
+    </noscript>
+
+    <header id="navbar">
+        <a href="#top" class="logo">Buena Vista</a>
+        <nav class="nav-right" aria-label="Main Navigation">
+            <div class="lang-switcher" role="group" aria-label="Language Switcher">
+                <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+                <button class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
+                <button class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+                <button class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+            </div>
+            <a href="#book" class="btn-reserve" data-key="btn_reserve">Reserve Now</a>
+        </nav>
+    </header>
+
+    <div class="mobile-sticky-bar">
+        <a href="#book" class="btn-reserve" data-key="btn_reserve_mobile">Reserve Now</a>
+    </div>
+
+    <!-- SEO FIX: Wrapping layout inside a Semantic MAIN tag -->
+    <main>
+        <section class="hero">
+            <div class="hero-content reveal">
+                <h1 data-key="hero_title">Escape to Pure Serenity</h1>
+                <p data-key="hero_sub">Experience unmatched panoramic views from your private, luxurious 4-person chalet in the heart of the Ardennes.</p>
+            </div>
+        </section>
+
+        <section class="stats-bar">
+            <div class="quick-stats">
+                <div class="stat-item"><i class="fa-solid fa-tag" aria-hidden="true"></i> <span data-key="stat_price">From €[PRICE] / night</span></div>
+                <div class="stat-item"><i class="fa-solid fa-user-group" aria-hidden="true"></i> <span data-key="stat_guests">4 Guests</span></div>
+                <div class="stat-item"><i class="fa-solid fa-bed" aria-hidden="true"></i> <span data-key="stat_beds">2 Bedrooms (1 Double, 1 Bunk)</span></div>
+                <div class="stat-item"><i class="fa-solid fa-wifi" aria-hidden="true"></i> <span data-key="stat_wifi">Free WiFi</span></div>
+            </div>
+        </section>
+
+        <section id="intro" class="intro reveal">
+            <div class="intro-text">
+                <h2 data-key="intro_title">A Modern Retreat in Nature</h2>
+                <div class="accent-line"></div>
+                <p data-key="intro_p1">Chalet Buena Vista is a beautifully designed haven for up to 4 guests, situated perfectly to offer breathtaking views over Bouillon and the winding Semois river.</p>
+                <p data-key="intro_p2">While enjoying absolute privacy on your spacious terrace, you also have full access to the vibrant amenities of Holidaypark Papillon, including a swimming pool, cozy bar, and extensive sports facilities.</p>
+            </div>
+            <div class="intro-img">
+                <img src="IMG20260405123650.jpg" alt="Chalet Interior to Terrace" data-alt-key="alt_intro" width="800" height="600" loading="lazy" decoding="async">
+                <div class="intro-badge" data-key="intro_badge">Stunning Views</div>
+            </div>
+        </section>
+
+        <!-- Chalet Specific Amenities -->
+        <section class="amenities reveal">
+            <div class="amenities-header">
+                <h2 data-key="am_title">Uncompromising Comfort</h2>
+                <p style="color: #ccc; font-size: 1.2rem; margin-bottom: 20px;" data-key="am_sub">Everything you need for an unforgettable stay.</p>
+                <div class="park-included-badge" data-key="am_park_badge">
+                    <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Includes Full Access to All Holidaypark Papillon Facilities
+                </div>
+            </div>
+            <div class="grid">
+                <div class="card"><div class="card-icon"><i class="fa-regular fa-snowflake" aria-hidden="true"></i></div><h3 data-key="am_airco">Full Air Conditioning</h3><p data-key="am_airco_desc">Stay perfectly cool during warm summer days.</p></div>
+                <div class="card"><div class="card-icon"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i></div><h3 data-key="am_terrace">Private Terrace</h3><p data-key="am_terrace_desc">Start your morning with a coffee and a breathtaking panorama.</p></div>
+                <div class="card"><div class="card-icon"><i class="fa-solid fa-wifi" aria-hidden="true"></i></div><h3 data-key="am_wifi">Fast Free WiFi</h3><p data-key="am_wifi_desc">Stay connected effortlessly even while surrounded by nature.</p></div>
+                <div class="card"><div class="card-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></div><h3 data-key="am_dog">Dog Friendly</h3><p data-key="am_dog_desc">Endless forest trails right from your doorstep for your furry friends.</p></div>
+            </div>
+        </section>
+
+        <!-- Park Facilities Grid -->
+        <section class="park-facilities reveal">
+            <div class="park-facilities-header">
+                <h2 data-key="park_title">Holidaypark Facilities</h2>
+                <p data-key="park_sub">Your stay includes full access to the park's vibrant amenities.</p>
+            </div>
+            <div class="grid">
+                <div class="card"><div class="card-icon"><i class="fa-solid fa-person-swimming" aria-hidden="true"></i></div><h3 data-key="pf_pool">Heated Swimming Pool</h3><p data-key="pf_pool_desc">Enjoy the heated swimming pool and a separate safe paddling pool for toddlers.</p></div>
+                <div class="card"><div class="card-icon"><i class="fa-solid fa-water" aria-hidden="true"></i></div><h3 data-key="pf_river">Semois River Access</h3><p data-key="pf_river_desc">Direct access to the river for swimming, building dams, and fishing.</p></div>
+                <div class="card"><div class="card-icon"><i class="fa-solid fa-masks-theater" aria-hidden="true"></i></div><h3 data-key="pf_anim">Animation & Kids Club</h3><p data-key="pf_anim_desc">During school holidays, our animation team provides endless fun and activities.</p></div>
+                <div class="card"><div class="card-icon"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i></div><h3 data-key="pf_play">Playgrounds</h3><p data-key="pf_play_desc">Multiple outdoor playgrounds, trampolines, and a sandbox for the kids.</p></div>
+                <div class="card"><div class="card-icon"><i class="fa-solid fa-table-tennis-paddle-ball" aria-hidden="true"></i></div><h3 data-key="pf_sports">Sports & Games</h3><p data-key="pf_sports_desc">Challenge each other to table tennis, pétanque, or a game on the sports field.</p></div>
+                <div class="card"><div class="card-icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div><h3 data-key="pf_food">Brasserie & Fresh Bakery</h3><p data-key="pf_food_desc">Grab a drink at the cozy bar or order fresh bread and pastries for breakfast.</p></div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="gallery reveal">
+            <div class="gallery-header">
+                <h2 data-key="gal_title">Step Inside</h2>
+                <p data-key="gal_sub">A harmony of natural wood and modern elegance.</p>
+            </div>
+            <div class="slider-wrap" id="sliderContainer" tabindex="0" aria-label="Image Gallery">
+                <div class="slides" id="slider">
+                    <div class="slide active-slide"><img src="1ekamer.jpg" alt="Master Bedroom" data-alt-key="alt_s1" width="1200" height="700" loading="lazy" decoding="async"><div class="slide-caption" data-key="slide_1">Master Bedroom</div></div>
+                    <div class="slide"><img src="IMG20260405123726.jpg" alt="Bright Open Dining" data-alt-key="alt_s2" width="1200" height="700" loading="lazy" decoding="async"><div class="slide-caption" data-key="slide_2">Bright Open Dining</div></div>
+                    <div class="slide"><img src="leefruumte3.jpg" alt="Fully Equipped Kitchen" data-alt-key="alt_s3" width="1200" height="700" loading="lazy" decoding="async"><div class="slide-caption" data-key="slide_3">Fully Equipped Kitchen</div></div>
+                    <div class="slide"><img src="IMG20260405125346.jpg" alt="Second Bedroom" data-alt-key="alt_s4" width="1200" height="700" loading="lazy" decoding="async"><div class="slide-caption" data-key="slide_4">Second Bedroom</div></div>
+                    <div class="slide"><img src="IMG20260405124252.jpg" alt="Modern Walk-in Shower" data-alt-key="alt_s5" width="1200" height="700" loading="lazy" decoding="async"><div class="slide-caption" data-key="slide_5">Modern Walk-in Shower</div></div>
+                </div>
+                <div class="slider-nav">
+                    <button class="slider-btn" id="prevBtn" aria-label="Previous Image" data-aria-key="aria_prev"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+                    <button class="slider-btn" id="nextBtn" aria-label="Next Image" data-aria-key="aria_next"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Things to do Grid -->
+        <section class="explore reveal">
+            <div class="explore-header">
+                <h2 data-key="exp_title">Things to Explore</h2>
+                <p data-key="exp_sub">Discover the magic of Bouillon and the surrounding Ardennes.</p>
+            </div>
+            <div class="explore-grid">
+                <div class="explore-card">
+                    <img src="La_ville_de_Bouillon_et_son_château-fort.JPG" alt="Bouillon Castle" data-alt-key="alt_exp1" loading="lazy" decoding="async">
+                    <div class="explore-body">
+                        <h3 data-key="exp_1_title">Bouillon Castle</h3>
+                        <p data-key="exp_1_desc">Step back in time and discover the medieval history of Godfrey of Bouillon at this iconic fortress overlooking the city.</p>
+                        <div class="explore-attribution">
+                            <span data-key="attr_photo">Image:</span> Momostardust / <a href="https://commons.wikimedia.org/wiki/File:La_ville_de_Bouillon_et_son_ch%C3%A2teau-fort.JPG" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> / <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="explore-card">
+                    <img src="Semois.JPG" alt="Kayaking on the Semois" data-alt-key="alt_exp2" loading="lazy" decoding="async">
+                    <div class="explore-body">
+                        <h3 data-key="exp_2_title">Kayak on the Semois</h3>
+                        <p data-key="exp_2_desc">Paddle through lush nature and winding valleys. A perfect afternoon activity for families and adventurers alike.</p>
+                        <div class="explore-attribution">
+                            <span data-key="attr_photo">Image:</span> Donar Reiskoffer / <a href="https://commons.wikimedia.org/wiki/File:Semois.JPG" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> / <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="explore-card">
+                    <img src="Tombeau_du_Géant_(Parc_naturel_de_l'Ardenne_méridionale,_Parc_national_de_la_Vallée_de_la_Semois)_01.jpg" alt="Hiking in the Ardennes" data-alt-key="alt_exp3" loading="lazy" decoding="async">
+                    <div class="explore-body">
+                        <h3 data-key="exp_3_title">Endless Hikes</h3>
+                        <p data-key="exp_3_desc">Explore hundreds of kilometers of marked trails directly from the holiday park through the pristine Ardennes forest.</p>
+                        <div class="explore-attribution">
+                            <span data-key="attr_photo">Image:</span> FrDr / <a href="https://commons.wikimedia.org/wiki/File:Tombeau_du_G%C3%A9ant_(Parc_naturel_de_l%27Ardenne_m%C3%A9ridionale,_Parc_national_de_la_Vall%C3%A9e_de_la_Semois)_01.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="explore-card">
+                    <img src="tim-foster-qrIy8dBzCVU-unsplash.jpg" alt="Mountain Biking" data-alt-key="alt_exp4" loading="lazy" decoding="async">
+                    <div class="explore-body">
+                        <h3 data-key="exp_4_title">Mountain Biking</h3>
+                        <p data-key="exp_4_desc">Conquer the rugged Ardennes terrain with direct access to thrilling MTB trails.</p>
+                        <div class="explore-attribution">
+                            <span data-key="attr_photo">Image:</span> Tim Foster / <a href="https://unsplash.com/photos/qrIy8dBzCVU" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="explore-card">
+                    <img src="Animals_in_Parc_animalier_de_Bouillon_13.jpg" alt="Bouillon Animal Park" data-alt-key="alt_exp5" loading="lazy" decoding="async">
+                    <div class="explore-body">
+                        <h3 data-key="exp_5_title">Bouillon Animal Park</h3>
+                        <p data-key="exp_5_desc">Meet local and exotic wildlife in a beautiful woodland setting perfect for families.</p>
+                        <div class="explore-attribution">
+                            <span data-key="attr_photo">Image:</span> Donarreiskoffer / <a href="https://commons.wikimedia.org/wiki/File:Animals_in_Parc_animalier_de_Bouillon_13.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> / <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="explore-card">
+                    <img src="Abbaye_d'Orval,_Belgique_05.jpg" alt="Orval Abbey" data-alt-key="alt_exp6" loading="lazy" decoding="async">
+                    <div class="explore-body">
+                        <h3 data-key="exp_6_title">Orval Abbey</h3>
+                        <p data-key="exp_6_desc">Visit the historic Cistercian abbey and taste their world-famous authentic Trappist beer and cheese.</p>
+                        <div class="explore-attribution">
+                            <span data-key="attr_photo">Image:</span> Danielbaise / <a href="https://commons.wikimedia.org/wiki/File:Abbaye_d%27Orval,_Belgique_05.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section reveal">
+            <h2 data-key="faq_title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-1"><span data-key="faq_q1">What are the check-in and check-out times?</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="faq-answer" id="faq-ans-1">
+                    <div class="faq-answer-inner" data-key="faq_a1">Check-in is available from 15:00 onwards. Check-out must be completed by 10:00 on your day of departure. Keys are managed via the park reception.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-2"><span data-key="faq_q2">Are bed linen and towels included?</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="faq-answer" id="faq-ans-2">
+                    <div class="faq-answer-inner" data-key="faq_a2">Bed linen and towels are not included by default. You can bring your own, or easily rent them during the booking process or at the park reception.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-3"><span data-key="faq_q3">Is there parking next to the chalet?</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="faq-answer" id="faq-ans-3">
+                    <div class="faq-answer-inner" data-key="faq_a3">Yes, there is designated free parking available very close to the chalet for your convenience.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-4"><span data-key="faq_q4">Are there any additional park fees or tourist taxes?</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="faq-answer" id="faq-ans-4">
+                    <div class="faq-answer-inner" data-key="faq_a4">Please note that a standard local tourist tax and park contribution are calculated during the booking process. This gives you full access to all Holidaypark Papillon facilities during your stay.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-5"><span data-key="faq_q5">How far is the chalet from the pool and reception?</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="faq-answer" id="faq-ans-5">
+                    <div class="faq-answer-inner" data-key="faq_a5">The chalet is situated on a higher terrace to ensure the best panoramic views. It is just a short, scenic stroll (approx. [MINUTES] minutes) down to the central park amenities.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="contact-section reveal">
+            <div class="contact-wrapper">
+                <div class="map-container">
+                    <iframe title="Map showing location of Holidaypark Papillon Bouillon" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2558.1182276532454!2d5.048596615720173!3d49.79250007939103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c1b18420eb6085%3A0xc33a6699a287a177!2sHolidaypark%20Papillon%20Bouillon!5e0!3m2!1sen!2sbe!4v1680000000000!5m2!1sen!2sbe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div class="contact-info">
+                    <h2 data-key="contact_title">Location & Contact</h2>
+                    <p data-key="contact_desc">Chalet Buena Vista is located inside the beautiful Holidaypark Papillon in Bouillon. Have questions before booking? We are happy to help.</p>
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/32000000000" target="_blank" class="contact-link" rel="noopener noreferrer">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <span data-key="btn_whatsapp">Message on WhatsApp</span>
+                        </a>
+                        <a href="mailto:info@chaletbuenavista.be" class="contact-link">
+                            <i class="fa-regular fa-envelope" aria-hidden="true"></i> <span data-key="btn_email">Send us an Email</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="book" class="booking reveal">
+            <div class="booking-container">
+                <h2 data-key="book_title">Secure Your Stay</h2>
+                <p data-key="book_sub" style="color: #666; font-size: 1.1rem; margin-bottom: 30px;">Select your dates below for direct booking at the best rates.</p>
+                
+                <div class="recranet-placeholder">
+                    <strong data-key="book_widget">Recranet Booking Widget Integration</strong>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">(Paste the HTML/Script provided by Recranet here)</p>
+                </div>
+                <p class="booking-terms-note" data-key="book_terms_note">Terms, conditions, and cancellation policies apply and will be presented during checkout.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h2 style="margin-bottom: 20px; font-size: 2rem;">Buena Vista</h2>
+        <p data-key="footer_text">&copy; 2026 Chalet Buena Vista, Bouillon. All rights reserved.</p>
+        <p style="font-size: 0.8rem; color: #888; margin-top: 5px;" data-key="footer_vat">Enterprise Number (BCE/KBO): [BE 0XXX.XXX.XXX]</p>
+        
+        <div class="footer-links">
+            <a href="privacy.html" data-key="link_privacy">Privacy Policy & Cookies</a>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50 && window.innerWidth > 768) { navbar.classList.add('scrolled'); } 
+            else { navbar.classList.remove('scrolled'); }
+        });
+
+        // Intersection Observer (Performance Fix: Unobserve once animated)
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active'); 
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        reveals.forEach(reveal => revealObserver.observe(reveal));
+
+        // Slider Logic (Enhanced with Touch Swipe & Keyboard Nav)
+        const slider = document.getElementById('slider');
+        const sliderContainer = document.getElementById('sliderContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let slideIndex = 0; const totalSlides = slider.children.length;
+        let slideInterval;
+        
+        function updateSlider() { 
+            slider.style.transform = `translateX(-${slideIndex * 100}%)`; 
+            Array.from(slider.children).forEach((slide, index) => {
+                if(index === slideIndex) slide.classList.add('active-slide');
+                else slide.classList.remove('active-slide');
+            });
+        }
+        function nextSlide() { slideIndex = (slideIndex + 1) % totalSlides; updateSlider(); }
+        function prevSlide() { slideIndex = (slideIndex - 1 + totalSlides) % totalSlides; updateSlider(); }
+        function resetInterval() { clearInterval(slideInterval); slideInterval = setInterval(nextSlide, 5000); }
+        
+        nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+        prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
+        
+        // Mouse Hover Pause
+        sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        sliderContainer.addEventListener('mouseleave', resetInterval);
+        
+        // Keyboard Focus Pause & Arrow Navigation
+        sliderContainer.addEventListener('focusin', () => clearInterval(slideInterval));
+        sliderContainer.addEventListener('focusout', resetInterval);
+        sliderContainer.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') { prevSlide(); resetInterval(); }
+            else if (e.key === 'ArrowRight') { nextSlide(); resetInterval(); }
+        });
+
+        // Mobile Touch Swipe Logic
+        let touchStartX = 0;
+        let touchEndX = 0;
+        sliderContainer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+            clearInterval(slideInterval);
+        }, {passive: true});
+        sliderContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchEndX < touchStartX - 50) { nextSlide(); resetInterval(); } // Swipe Left
+            else if (touchEndX > touchStartX + 50) { prevSlide(); resetInterval(); } // Swipe Right
+            else { resetInterval(); }
+        }, {passive: true});
+        
+        slideInterval = setInterval(nextSlide, 5000);
+
+        // FAQ Accordion Logic
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const isActive = question.classList.contains('active');
+                faqQuestions.forEach(q => {
+                    q.classList.remove('active');
+                    q.setAttribute('aria-expanded', 'false');
+                    q.nextElementSibling.style.maxHeight = null;
+                });
+                if (!isActive) {
+                    question.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                    const answer = question.nextElementSibling;
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+
+        // FAQ Resize Fix
+        window.addEventListener('resize', () => {
+            document.querySelectorAll('.faq-question.active').forEach(question => {
+                question.nextElementSibling.style.maxHeight = question.nextElementSibling.scrollHeight + "px";
+            });
+        });
+
+        // Dictionary
+        const translations = {
+            en: {
+                btn_reserve: "Reserve Now", btn_reserve_mobile: "Reserve Now", hero_title: "Escape to Pure Serenity", hero_sub: "Experience unmatched panoramic views from your private, luxurious 4-person chalet in the heart of the Ardennes.",
+                stat_price: "From €[PRICE] / night", stat_guests: "4 Guests", stat_beds: "2 Bedrooms (1 Double, 1 Bunk)", stat_bath: "1 Bathroom", stat_wifi: "Free WiFi",
+                intro_title: "A Modern Retreat in Nature", intro_p1: "Chalet Buena Vista is a beautifully designed haven for up to 4 guests, situated perfectly to offer breathtaking views over Bouillon and the winding Semois river.", intro_p2: "While enjoying absolute privacy on your spacious terrace, you also have full access to the vibrant amenities of Holidaypark Papillon, including a swimming pool, cozy bar, and extensive sports facilities.", intro_badge: "Stunning Views",
+                am_title: "Uncompromising Comfort", am_sub: "Everything you need for an unforgettable stay.", am_park_badge: '<i class="fa-solid fa-circle-check" aria-hidden="true"></i> Includes Full Access to All Holidaypark Papillon Facilities', am_airco: "Full Air Conditioning", am_airco_desc: "Stay perfectly cool during warm summer days.", am_terrace: "Private Terrace", am_terrace_desc: "Start your morning with a coffee and a breathtaking panorama.", am_wifi: "Fast Free WiFi", am_wifi_desc: "Stay connected effortlessly even while surrounded by nature.", am_dog: "Dog Friendly", am_dog_desc: "Endless forest trails right from your doorstep for your furry friends.",
+                park_title: "Holidaypark Facilities", park_sub: "Your stay includes full access to the park's vibrant amenities.", pf_pool: "Heated Swimming Pool", pf_pool_desc: "Enjoy the heated swimming pool and a separate safe paddling pool for toddlers.", pf_river: "Semois River Access", pf_river_desc: "Direct access to the river for swimming, building dams, and fishing.", pf_anim: "Animation & Kids Club", pf_anim_desc: "During school holidays, our animation team provides endless fun and activities.", pf_play: "Playgrounds", pf_play_desc: "Multiple outdoor playgrounds, trampolines, and a sandbox for the kids.", pf_sports: "Sports & Games", pf_sports_desc: "Challenge each other to table tennis, pétanque, or a game on the sports field.", pf_food: "Brasserie & Fresh Bakery", pf_food_desc: "Grab a drink at the cozy bar or order fresh bread and pastries for breakfast.",
+                gal_title: "Step Inside", gal_sub: "A harmony of natural wood and modern elegance.", slide_1: "Master Bedroom", slide_2: "Bright Open Dining", slide_3: "Fully Equipped Kitchen", slide_4: "Second Bedroom", slide_5: "Modern Walk-in Shower",
+                exp_title: "Things to Explore", exp_sub: "Discover the magic of Bouillon and the surrounding Ardennes.", exp_1_title: "Bouillon Castle", exp_1_desc: "Step back in time and discover the medieval history of Godfrey of Bouillon at this iconic fortress overlooking the city.", exp_2_title: "Kayak on the Semois", exp_2_desc: "Paddle through lush nature and winding valleys. A perfect afternoon activity for families and adventurers alike.", exp_3_title: "Endless Hikes", exp_3_desc: "Explore hundreds of kilometers of marked trails directly from the holiday park through the pristine Ardennes forest.", exp_4_title: "Mountain Biking", exp_4_desc: "Conquer the rugged Ardennes terrain with direct access to thrilling MTB trails.", exp_5_title: "Bouillon Animal Park", exp_5_desc: "Meet local and exotic wildlife in a beautiful woodland setting perfect for families.", exp_6_title: "Orval Abbey", exp_6_desc: "Visit the historic Cistercian abbey and taste their world-famous authentic Trappist beer and cheese.",
+                faq_title: "Frequently Asked Questions", faq_q1: "What are the check-in and check-out times?", faq_a1: "Check-in is available from 15:00 onwards. Check-out must be completed by 10:00 on your day of departure. Keys are managed via the park reception.", faq_q2: "Are bed linen and towels included?", faq_a2: "Bed linen and towels are not included by default. You can bring your own, or easily rent them during the booking process or at the park reception.", faq_q3: "Is there parking next to the chalet?", faq_a3: "Yes, there is designated free parking available very close to the chalet for your convenience.", faq_q4: "Are there any additional park fees or tourist taxes?", faq_a4: "Please note that a standard local tourist tax and park contribution are calculated during the booking process. This gives you full access to all Holidaypark Papillon facilities during your stay.", faq_q5: "How far is the chalet from the pool and reception?", faq_a5: "The chalet is situated on a higher terrace to ensure the best panoramic views. It is just a short, scenic stroll (approx. [MINUTES] minutes) down to the central park amenities.",
+                contact_title: "Location & Contact", contact_desc: "Chalet Buena Vista is located inside the beautiful Holidaypark Papillon in Bouillon. Have questions before booking? We are happy to help.", btn_whatsapp: "Message on WhatsApp", btn_email: "Send us an Email",
+                book_title: "Secure Your Stay", book_sub: "Select your dates below for direct booking at the best rates.", book_widget: "Recranet Booking Widget Integration", footer_text: "© 2026 Chalet Buena Vista, Bouillon. All rights reserved.", link_privacy: "Privacy Policy & Cookies",
+                alt_intro: "Chalet Interior to Terrace", alt_s1: "Master Bedroom", alt_s2: "Bright Open Dining", alt_s3: "Fully Equipped Kitchen", alt_s4: "Second Bedroom", alt_s5: "Modern Walk-in Shower", aria_prev: "Previous Image", aria_next: "Next Image", attr_photo: "Image:",
+                book_terms_note: "Terms, conditions, and cancellation policies apply and will be presented during checkout.", footer_vat: "Enterprise Number (BCE/KBO): [BE 0XXX.XXX.XXX]",
+                alt_exp1: "Bouillon Castle", alt_exp2: "Kayaking on the Semois", alt_exp3: "Hiking in the Ardennes", alt_exp4: "Mountain Biking in the Ardennes", alt_exp5: "Bouillon Animal Park", alt_exp6: "Orval Abbey"
+            },
+            nl: {
+                btn_reserve: "Nu Boeken", btn_reserve_mobile: "Nu Boeken", hero_title: "Ontsnap naar Pure Rust", hero_sub: "Ervaar een ongeëvenaard panoramisch uitzicht vanuit uw luxe 4-persoons privé-chalet in het hart van de Ardennen.",
+                stat_price: "Vanaf €[PRICE] / nacht", stat_guests: "4 Gasten", stat_beds: "2 Slaapkamers (1 2-pers, 1 Stapelbed)", stat_bath: "1 Badkamer", stat_wifi: "Gratis WiFi",
+                intro_title: "Een Modern Toevluchtsoord", intro_p1: "Chalet Buena Vista is een prachtig ontworpen oase voor maximaal 4 gasten, perfect gelegen met een adembenemend uitzicht over Bouillon en de Semois.", intro_p2: "Terwijl u geniet van absolute privacy op uw ruime terras, heeft u ook volledige toegang tot de faciliteiten van Holidaypark Papillon, waaronder een zwembad, gezellige bar en sportvelden.", intro_badge: "Prachtig Uitzicht",
+                am_title: "Compromisloos Comfort", am_sub: "Alles wat u nodig heeft voor een onvergetelijk verblijf.", am_park_badge: '<i class="fa-solid fa-circle-check" aria-hidden="true"></i> Inclusief volledige toegang tot alle faciliteiten van Holidaypark Papillon', am_airco: "Airconditioning", am_airco_desc: "Blijf heerlijk koel tijdens warme zomerdagen.", am_terrace: "Privéterras", am_terrace_desc: "Begin uw ochtend met koffie en een prachtig panorama.", am_wifi: "Snel Gratis WiFi", am_wifi_desc: "Blijf moeiteloos verbonden, zelfs midden in de natuur.", am_dog: "Hondvriendelijk", am_dog_desc: "Eindeloze boswandelingen direct voor de deur.",
+                park_title: "Parkvoorzieningen", park_sub: "Uw verblijf is inclusief volledige toegang tot de levendige parkfaciliteiten.", pf_pool: "Verwarmd Zwembad", pf_pool_desc: "Geniet van ons verwarmde zwembad en apart veilig peuterbad.", pf_river: "Directe Toegang tot de Semois", pf_river_desc: "Directe toegang tot de rivier om te zwemmen, dammen te bouwen en te vissen.", pf_anim: "Animatie & Kidsclub", pf_anim_desc: "Tijdens de schoolvakanties zorgt ons animatieteam voor eindeloos plezier.", pf_play: "Speeltuinen", pf_play_desc: "Meerdere buitenspeeltuinen, trampolines en een zandbak voor de kinderen.", pf_sports: "Sport & Spel", pf_sports_desc: "Daag elkaar uit voor tafeltennis, jeu de boules of een wedstrijd op het sportveld.", pf_food: "Brasserie & Verse Bakkerij", pf_food_desc: "Haal een drankje bij de gezellige bar of bestel vers brood voor het ontbijt.",
+                gal_title: "Stap Binnen", gal_sub: "Een harmonie van natuurlijk hout en moderne elegantie.", slide_1: "Ouderslaapkamer", slide_2: "Lichte Open Eethoek", slide_3: "Volledig Uitgeruste Keuken", slide_4: "Tweede Slaapkamer", slide_5: "Moderne Inloopdouche",
+                exp_title: "Ontdek de Omgeving", exp_sub: "Ontdek de magie van Bouillon en de omliggende Ardennen.", exp_1_title: "Kasteel van Bouillon", exp_1_desc: "Stap terug in de tijd en ontdek de middeleeuwse geschiedenis van Godfried van Bouillon bij deze iconische vesting.", exp_2_title: "Kajakken op de Semois", exp_2_desc: "Peddel door weelderige natuur en kronkelende valleien. Een perfecte activiteit voor families en avonturiers.", exp_3_title: "Eindeloze Wandelingen", exp_3_desc: "Verken honderden kilometers aan gemarkeerde routes direct vanuit het vakantiepark door de bossen.", exp_4_title: "Mountainbiken", exp_4_desc: "Trotseer het ruige terrein van de Ardennen met directe toegang tot spannende MTB-routes.", exp_5_title: "Dierenpark Bouillon", exp_5_desc: "Ontmoet lokale en exotische dieren in een prachtige bosrijke omgeving, perfect voor families.", exp_6_title: "Abdij van Orval", exp_6_desc: "Bezoek de historische abdij en proef hun wereldberoemde authentieke trappistenbier en kaas.",
+                faq_title: "Veelgestelde Vragen", faq_q1: "Wat zijn de in- en uitchecktijden?", faq_a1: "Inchecken is mogelijk vanaf 15:00 uur. Uitchecken dient te gebeuren voor 10:00 uur. Sleutels via de parkreceptie.", faq_q2: "Zijn beddengoed en handdoeken inbegrepen?", faq_a2: "Beddengoed en handdoeken zijn standaard niet inbegrepen. U kunt deze zelf meenemen of huren via de receptie.", faq_q3: "Is er parkeergelegenheid bij het chalet?", faq_a3: "Ja, er is een gratis parkeerplaats beschikbaar dicht bij het chalet voor uw gemak.", faq_q4: "Zijn er extra parkkosten of toeristenbelasting?", faq_a4: "Houd er rekening mee dat een standaard toeristenbelasting en parkbijdrage worden berekend tijdens het boeken. Dit geeft u volledige toegang tot alle faciliteiten van Holidaypark Papillon.", faq_q5: "Hoe ver is het chalet van het zwembad en de receptie?", faq_a5: "Het chalet bevindt zich op een hoger terras voor het beste uitzicht. Het is slechts een korte wandeling (ca. [MINUTES] minuten) naar de centrale parkvoorzieningen.",
+                contact_title: "Locatie & Contact", contact_desc: "Chalet Buena Vista is gelegen in het prachtige Holidaypark Papillon in Bouillon. Heeft u vragen voor het boeken? Wij helpen u graag.", btn_whatsapp: "Stuur een WhatsApp", btn_email: "Stuur ons een Email",
+                book_title: "Boek Uw Verblijf", book_sub: "Selecteer hieronder uw data voor een directe boeking tegen de beste tarieven.", book_widget: "Recranet Boekingswidget Integratie", footer_text: "© 2026 Chalet Buena Vista, Bouillon. Alle rechten voorbehouden.", link_privacy: "Privacybeleid & Cookies",
+                alt_intro: "Interieur chalet tot terras", alt_s1: "Ouderslaapkamer", alt_s2: "Lichte Open Eethoek", alt_s3: "Volledig Uitgeruste Keuken", alt_s4: "Tweede Slaapkamer", alt_s5: "Moderne Inloopdouche", aria_prev: "Vorige afbeelding", aria_next: "Volgende afbeelding", attr_photo: "Afbeelding:",
+                book_terms_note: "Voorwaarden en annuleringsvoorwaarden zijn van toepassing en worden getoond tijdens het afrekenen.", footer_vat: "Ondernemingsnummer (KBO): [BE 0XXX.XXX.XXX]",
+                alt_exp1: "Kasteel van Bouillon", alt_exp2: "Kajakken op de Semois", alt_exp3: "Wandelen in de Ardennen", alt_exp4: "Mountainbiken in de Ardennen", alt_exp5: "Dierenpark Bouillon", alt_exp6: "Abdij van Orval"
+            },
+            fr: {
+                btn_reserve: "Réserver", btn_reserve_mobile: "Réserver", hero_title: "Évadez-vous vers la Sérénité", hero_sub: "Profitez de vues panoramiques inégalées depuis votre chalet luxueux et privé pour 4 personnes au cœur des Ardennes.",
+                stat_price: "À partir de €[PRICE] / nuit", stat_guests: "4 Personnes", stat_beds: "2 Chambres (1 Double, 1 Superposé)", stat_bath: "1 Salle de Bain", stat_wifi: "WiFi Gratuit",
+                intro_title: "Une Retraite Moderne", intro_p1: "Le Chalet Buena Vista est un havre de paix magnifiquement conçu pour 4 personnes, parfaitement situé pour offrir une vue imprenable sur Bouillon et la Semois.", intro_p2: "Tout en profitant d'une intimité absolue sur votre terrasse, vous avez accès aux équipements du Holidaypark Papillon : piscine, bar et installations sportives.", intro_badge: "Vue Imprenable",
+                am_title: "Confort Sans Compromis", am_sub: "Tout ce dont vous avez besoin pour un séjour inoubliable.", am_park_badge: '<i class="fa-solid fa-circle-check" aria-hidden="true"></i> Accès complet à tous les équipements du Holidaypark Papillon inclus', am_airco: "Climatisation", am_airco_desc: "Restez au frais pendant les chaudes journées d'été.", am_terrace: "Terrasse Privée", am_terrace_desc: "Commencez votre journée avec un café et un panorama magnifique.", am_wifi: "WiFi Rapide et Gratuit", am_wifi_desc: "Restez connecté sans effort même en pleine nature.", am_dog: "Chiens Bienvenus", am_dog_desc: "Des sentiers forestiers infinis juste devant votre porte.",
+                park_title: "Installations du Parc", park_sub: "Votre séjour inclut l'accès complet aux équipements du parc.", pf_pool: "Piscine Chauffée", pf_pool_desc: "Profitez de la piscine chauffée et d'une pataugeoire sécurisée pour les tout-petits.", pf_river: "Accès à la Semois", pf_river_desc: "Accès direct à la rivière pour nager, construire des barrages et pêcher.", pf_anim: "Animation & Club Enfants", pf_anim_desc: "Pendant les vacances scolaires, notre équipe d'animation propose des activités amusantes.", pf_play: "Aires de Jeux", pf_play_desc: "Plusieurs aires de jeux extérieures, trampolines et bac à sable pour les enfants.", pf_sports: "Sports & Jeux", pf_sports_desc: "Défiez-vous au ping-pong, à la pétanque ou sur le terrain de sport.", pf_food: "Brasserie & Boulangerie", pf_food_desc: "Prenez un verre au bar ou commandez du pain frais pour le petit-déjeuner.",
+                gal_title: "Entrez à l'Intérieur", gal_sub: "Une harmonie de bois naturel et d'élégance moderne.", slide_1: "Chambre Principale", slide_2: "Salle à Manger Lumineuse", slide_3: "Cuisine Entièrement Équipée", slide_4: "Deuxième Chambre", slide_5: "Douche à l'Italienne Moderne",
+                exp_title: "À Découvrir", exp_sub: "Découvrez la magie de Bouillon et des Ardennes environnantes.", exp_1_title: "Château de Bouillon", exp_1_desc: "Remontez le temps et découvrez l'histoire de Godefroy de Bouillon dans cette forteresse emblématique.", exp_2_title: "Kayak sur la Semois", exp_2_desc: "Pagayez à travers une nature luxuriante et des vallées sinueuses. Une activité parfaite pour la famille.", exp_3_title: "Randonnées Infinies", exp_3_desc: "Explorez des centaines de kilomètres de sentiers balisés directement depuis le parc.", exp_4_title: "VTT (Mountain Bike)", exp_4_desc: "Partez à la conquête des Ardennes avec un accès direct à des pistes de VTT passionnantes.", exp_5_title: "Parc Animalier", exp_5_desc: "Rencontrez la faune locale et exotique dans un magnifique cadre boisé parfait pour les familles.", exp_6_title: "Abbaye d'Orval", exp_6_desc: "Visitez l'abbaye historique et goûtez leur célèbre bière et fromage trappistes authentiques.",
+                faq_title: "Questions Fréquentes", faq_q1: "Quelles sont les heures d'arrivée et de départ ?", faq_a1: "L'arrivée se fait à partir de 15h00. Le départ doit s'effectuer avant 10h00. Clés à la réception.", faq_q2: "Les draps et serviettes sont-ils inclus ?", faq_a2: "Les draps et serviettes ne sont pas inclus. Vous pouvez apporter les vôtres ou les louer à la réception.", faq_q3: "Y a-t-il un parking près du chalet ?", faq_a3: "Oui, un parking gratuit est disponible très près du chalet pour votre confort.", faq_q4: "Y a-t-il des frais de parc ou taxes de séjour supplémentaires ?", faq_a4: "Veuillez noter qu'une taxe de séjour et une contribution de parc standard sont calculées lors de la réservation. Cela vous donne un accès complet aux installations du parc.", faq_q5: "À quelle distance se trouve le chalet de la piscine et de la réception ?", faq_a5: "Le chalet est situé sur une terrasse surélevée pour garantir les meilleures vues. Il se trouve à une courte promenade (env. [MINUTES] minutes) des commodités centrales.",
+                contact_title: "Lieu & Contact", contact_desc: "Le Chalet Buena Vista est situé dans le magnifique Holidaypark Papillon à Bouillon. Vous avez des questions ? Nous serons ravis de vous aider.", btn_whatsapp: "Message sur WhatsApp", btn_email: "Envoyez-nous un Email",
+                book_title: "Réservez Votre Séjour", book_sub: "Sélectionnez vos dates ci-dessous pour réserver directement aux meilleurs tarifs.", book_widget: "Intégration du Widget Recranet", footer_text: "© 2026 Chalet Buena Vista, Bouillon. Tous droits réservés.", link_privacy: "Politique de Confidentialité et Cookies",
+                alt_intro: "Intérieur du chalet vers la terrasse", alt_s1: "Chambre Principale", alt_s2: "Salle à Manger Lumineuse", alt_s3: "Cuisine Entièrement Équipée", alt_s4: "Deuxième Chambre", alt_s5: "Douche à l'Italienne Moderne", aria_prev: "Image Précédente", aria_next: "Image Suivante", attr_photo: "Image :",
+                book_terms_note: "Les conditions générales et politiques d'annulation s'appliquent et seront affichées lors du paiement.", footer_vat: "Numéro d'entreprise (BCE): [BE 0XXX.XXX.XXX]",
+                alt_exp1: "Château de Bouillon", alt_exp2: "Kayak sur la Semois", alt_exp3: "Randonnée dans les Ardennes", alt_exp4: "VTT dans les Ardennes", alt_exp5: "Parc Animalier de Bouillon", alt_exp6: "Abbaye d'Orval"
+            },
+            de: {
+                btn_reserve: "Jetzt Buchen", btn_reserve_mobile: "Jetzt Buchen", hero_title: "Entfliehen Sie in die pure Ruhe", hero_sub: "Erleben Sie einen unvergleichlichen Panoramablick aus Ihrem privaten, luxuriösen 4-Personen-Chalet im Herzen der Ardennen.",
+                stat_price: "Ab €[PRICE] / Nacht", stat_guests: "4 Gäste", stat_beds: "2 Schlafzimmer (1 Doppel, 1 Etagenbett)", stat_bath: "1 Badezimmer", stat_wifi: "Kostenloses WiFi",
+                intro_title: "Ein moderner Rückzugsort", intro_p1: "Das Chalet Buena Vista ist eine wunderschön gestaltete Oase für bis zu 4 Gäste, perfekt gelegen, um einen atemberaubenden Blick auf Bouillon und die Semois zu bieten.", intro_p2: "Während Sie auf Ihrer geräumigen Terrasse absolute Privatsphäre genießen, haben Sie vollen Zugang zu den Einrichtungen des Holidayparks Papillon (Pool, Bar, Sportanlagen).", intro_badge: "Herrliche Aussicht",
+                am_title: "Kompromissloser Komfort", am_sub: "Alles, was Sie für einen unvergesslichen Aufenthalt benötigen.", am_park_badge: '<i class="fa-solid fa-circle-check" aria-hidden="true"></i> Inklusive vollem Zugang zu allen Einrichtungen des Holidayparks Papillon', am_airco: "Klimaanlage", am_airco_desc: "Bleiben Sie an warmen Sommertagen perfekt kühl.", am_terrace: "Private Terrasse", am_terrace_desc: "Beginnen Sie Ihren Morgen mit Kaffee und einem atemberaubenden Panorama.", am_wifi: "Kostenloses WiFi", am_wifi_desc: "Bleiben Sie mühelos in Verbindung, auch mitten in der Natur.", am_dog: "Hundefreundlich", am_dog_desc: "Endlose Waldwege direkt vor Ihrer Haustür.",
+                park_title: "Parkeinrichtungen", park_sub: "Ihr Aufenthalt beinhaltet den vollen Zugang zu den Einrichtungen des Parks.", pf_pool: "Beheiztes Schwimmbad", pf_pool_desc: "Genießen Sie das beheizte Schwimmbad und ein separates sicheres Planschbecken für Kleinkinder.", pf_river: "Zugang zur Semois", pf_river_desc: "Direkter Zugang zum Fluss zum Schwimmen, Staudamm bauen und Angeln.", pf_anim: "Animation & Kids Club", pf_anim_desc: "Während der Schulferien sorgt unser Animationsteam für endlosen Spaß.", pf_play: "Spielplätze", pf_play_desc: "Mehrere Außenspielplätze, Trampoline und ein Sandkasten für die Kinder.", pf_sports: "Sport & Spiel", pf_sports_desc: "Fordern Sie sich bei Tischtennis, Pétanque oder einem Spiel auf dem Sportplatz heraus.", pf_food: "Brasserie & Bäckerei", pf_food_desc: "Holen Sie sich ein Getränk an der gemütlichen Bar oder bestellen Sie frisches Brot zum Frühstück.",
+                gal_title: "Treten Sie ein", gal_sub: "Eine Harmonie aus Naturholz und moderner Eleganz.", slide_1: "Hauptschlafzimmer", slide_2: "Helles offenes Esszimmer", slide_3: "Voll ausgestattete Küche", slide_4: "Zweites Schlafzimmer", slide_5: "Moderne begehbare Dusche",
+                exp_title: "Umgebung Entdecken", exp_sub: "Entdecken Sie die Magie von Bouillon und den umliegenden Ardennen.", exp_1_title: "Burg Bouillon", exp_1_desc: "Gehen Sie in die Vergangenheit und entdecken Sie die Geschichte von Gottfried von Bouillon in dieser Festung.", exp_2_title: "Kajak auf der Semois", exp_2_desc: "Paddeln Sie durch üppige Natur und gewundene Täler. Eine perfekte Aktivität für die ganze Familie.", exp_3_title: "Endlose Wanderungen", exp_3_desc: "Erkunden Sie hunderte Kilometer markierter Wanderwege direkt vom Ferienpark aus.", exp_4_title: "Mountainbiken", exp_4_desc: "Erobern Sie das raue Gelände der Ardennen mit direktem Zugang zu spannenden MTB-Strecken.", exp_5_title: "Tierpark Bouillon", exp_5_desc: "Treffen Sie einheimische und exotische Tiere in einer wunderschönen Waldkulisse.", exp_6_title: "Abtei Orval", exp_6_desc: "Besuchen Sie die historische Abtei und probieren Sie ihr weltberühmtes Trappistenbier und Käse.",
+                faq_title: "Häufige Fragen", faq_q1: "Wie sind die Check-in- und Check-out-Zeiten?", faq_a1: "Check-in ist ab 15:00 Uhr. Check-out muss vor 10:00 Uhr erfolgen. Schlüsselübergabe an der Rezeption.", faq_q2: "Sind Bettwäsche und Handtücher inklusive?", faq_a2: "Bettwäsche und Handtücher sind nicht inklusive. Sie können diese mitbringen oder an der Rezeption mieten.", faq_q3: "Gibt es Parkplätze in der Nähe?", faq_a3: "Ja, in der Nähe des Chalets gibt es kostenlose Parkplätze für Ihren Komfort.", faq_q4: "Gibt es zusätzliche Parkgebühren oder Touristensteuern?", faq_a4: "Bitte beachten Sie, dass während der Buchung eine Touristensteuer und ein Parkbeitrag berechnet werden. Dies gibt Ihnen vollen Zugang zu den Einrichtungen.", faq_q5: "Wie weit ist das Chalet vom Pool und der Rezeption entfernt?", faq_a5: "Das Chalet liegt auf einer höheren Terrasse für die beste Aussicht. Es ist nur ein kurzer Spaziergang (ca. [MINUTES] Minuten) zu den zentralen Parkeinrichtungen.",
+                contact_title: "Ort & Kontakt", contact_desc: "Das Chalet Buena Vista befindet sich im Holidaypark Papillon in Bouillon. Haben Sie Fragen vor der Buchung? Wir helfen gerne.", btn_whatsapp: "Nachricht per WhatsApp", btn_email: "Senden Sie uns eine Email",
+                book_title: "Sichern Sie Ihren Aufenthalt", book_sub: "Wählen Sie unten Ihre Daten für eine Direktbuchung zu den besten Preisen.", book_widget: "Recranet Buchungswidget-Integration", footer_text: "© 2026 Chalet Buena Vista, Bouillon. Alle Rechte vorbehalten.", link_privacy: "Datenschutzerklärung & Cookies",
+                alt_intro: "Chalet-Innenraum zur Terrasse", alt_s1: "Hauptschlafzimmer", alt_s2: "Helles offenes Esszimmer", alt_s3: "Voll ausgestattete Küche", alt_s4: "Zweites Schlafzimmer", alt_s5: "Moderne begehbare Dusche", aria_prev: "Vorheriges Bild", aria_next: "Nächstes Bild", attr_photo: "Bild:",
+                book_terms_note: "Es gelten die Allgemeinen Geschäfts- und Stornierungsbedingungen. Diese werden während des Buchungsvorgangs angezeigt.", footer_vat: "Unternehmensnummer (ZUB): [BE 0XXX.XXX.XXX]",
+                alt_exp1: "Burg Bouillon", alt_exp2: "Kajak auf der Semois", alt_exp3: "Wandern in den Ardennen", alt_exp4: "Mountainbiken in den Ardennen", alt_exp5: "Tierpark Bouillon", alt_exp6: "Abtei Orval"
+            }
+        };
+
+        const langBtns = document.querySelectorAll('.lang-btn');
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                langBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+                this.classList.add('active'); this.setAttribute('aria-pressed', 'true');
+                const lang = this.getAttribute('data-lang');
+                document.documentElement.lang = lang; 
+
+                try { localStorage.setItem('preferredLanguage', lang); } 
+                catch (error) { console.warn("Local storage is disabled."); }
+
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    const translatedText = (translations[lang] && translations[lang][key]) ? translations[lang][key] : translations['en'][key];
+                    if(translatedText) el.innerHTML = translatedText; 
+                });
+                document.querySelectorAll('[data-alt-key]').forEach(el => {
+                    const key = el.getAttribute('data-alt-key');
+                    const translatedText = (translations[lang] && translations[lang][key]) ? translations[lang][key] : translations['en'][key];
+                    if(translatedText) el.alt = translatedText;
+                });
+                document.querySelectorAll('[data-aria-key]').forEach(el => {
+                    const key = el.getAttribute('data-aria-key');
+                    const translatedText = (translations[lang] && translations[lang][key]) ? translations[lang][key] : translations['en'][key];
+                    if(translatedText) el.setAttribute('aria-label', translatedText);
+                });
+            });
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            try {
+                const savedLang = localStorage.getItem('preferredLanguage');
+                if (savedLang) {
+                    const btnToClick = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
+                    if(btnToClick && !btnToClick.classList.contains('active')) btnToClick.click();
+                }
+            } catch(error) {}
+        });
+    </script>
+</body>
+</html>
